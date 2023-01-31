@@ -1,0 +1,71 @@
+@use "sass:map";
+
+$percentage: (
+  'zero':2%,
+  'first': 90%,
+  'second': 99%,
+  'third': 100%
+);
+
+
+$border: 10px;
+$color: green;
+
+
+.diagramma {
+  display: flex;
+  gap: 15px;
+
+  &__item {
+    position: relative;
+    text-align: center;
+    font-size: 16px;
+    height: 100px;
+    width: 100px;
+
+    &::before {
+      -webkit-mask: radial-gradient(farthest-side, #0000 calc(99% - 10px), #000 calc(100% - 10px));
+      mask: radial-gradient(farthest-side, #0000 calc(99% - 10px), #000 calc(100% - 10px));
+      border-radius: 50%;
+      display: block;
+      z-index: -1;
+      content: '';
+      height: 100%;
+      inset: 0;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    display: block;
+    left: 40%;
+    top: 40%;
+  }
+
+}
+
+
+
+
+.item_0 {
+  &::before {
+    background: conic-gradient($color map-get($percentage, first),
+        #80808057 0);
+
+  }
+}
+
+
+.item_1 {
+  &::before {
+    background: conic-gradient($color map-get($percentage, second),
+        #80808057 0);
+  }
+}
+
+.item_2 {
+  &::before {
+    background: conic-gradient($color map-get($percentage, third),
+        #80808057 0);
+  }
+}

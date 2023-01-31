@@ -1,0 +1,458 @@
+// @import '../../assets/fonts/icons/style.css';
+@use 'sass:map';
+//Main
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  color: #4f4d4d;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #4f4d4d;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  max-width: 1260px;
+  padding: 0 30px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 900px) {
+    padding: 0 5px;
+  }
+}
+
+.resume {
+  box-shadow: 0 0 12px;
+  min-height: 100vh;
+  display: flex;
+  width: 100%;
+
+  @media screen and (max-width:650px) {
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 0px;
+  }
+
+  &__part {
+    border-right: 2px solid #ebe9e9;
+    padding: 20px 16px;
+    flex: 1;
+
+    &--flex {
+      justify-content: space-between;
+      flex-direction: column;
+      display: flex;
+      flex: 2;
+    }
+  }
+
+  &__part--background {
+    background: #f4f3f3;
+  }
+
+  &__photo {
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto;
+    height: 200px;
+    width: 200px;
+
+    &::before {
+      border: 1px solid #ebe9e9;
+      box-shadow: 0px 0px 30px;
+      border-radius: 50%;
+      position: absolute;
+      height: 206px;
+      width: 206px;
+      content: '';
+      left: -4px;
+      top: -4px;
+    }
+  }
+
+  &__title {
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px auto 0;
+    font-size: 18px;
+    display: flex;
+    width: 50%;
+
+    &-separator {
+      border-top: 1px solid #191970;
+      width: 40px;
+    }
+
+    &-text {
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      text-align: center;
+      padding: 0 10px;
+
+      &--font {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__descrip {
+    text-align: justify;
+    line-height: 22px;
+    margin-top: 20px;
+  }
+
+  &__personal-info-list {
+    flex-direction: column;
+    padding-top: 20px;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+
+  &__personal-icon {
+    display: inline-block;
+    padding-right: 10px;
+    cursor: pointer;
+    font-size: 22px;
+
+    & span {
+      width: 100%;
+    }
+  }
+
+  &__personal-info-item {
+    display: flex;
+  }
+
+  &__personal-title {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    flex: 1;
+  }
+
+  &__personal-content {
+    align-items: flex-end;
+    display: flex;
+    flex: 2;
+
+    &--line {
+      line-height: 25px;
+    }
+  }
+
+  &__skills {
+    justify-content: space-around;
+    margin: 40px 0;
+    flex-wrap: wrap;
+    display: flex;
+  }
+
+  &__works-item {
+    margin-top: 10px;
+    max-width: 400px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+
+    & img {
+      box-shadow: 0 0 12px;
+    }
+  }
+
+  &__works {
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+
+    &-skills {
+      flex-direction: column;
+      padding-top: 20px;
+      list-style: none;
+      font-size: 16px;
+      display: flex;
+      gap: 10px;
+    }
+  }
+
+  &__header {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  &__username {
+    text-transform: uppercase;
+    letter-spacing: 20px;
+    font-weight: 400;
+    font-size: 24px;
+
+    @media screen and (max-width: 900px) {
+      letter-spacing: 10px;
+      font-size: 18px;
+    }
+  }
+
+  &__subtitle {
+    text-transform: uppercase;
+    background: #191970;
+    letter-spacing: 8px;
+    margin: 20px auto 0;
+    color: #ebe9e9;
+    padding: 6px 0;
+    font-size: 18px;
+    width: 70%;
+
+    @media screen and (max-width: 900px) {
+      letter-spacing: 4px;
+      font-size: 16px;
+    }
+  }
+
+  &__experience {
+    flex-direction: column;
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+
+    &-term {
+      font-size: 12px;
+      color: #929292;
+    }
+  }
+
+  &__experience-item {
+    flex-direction: column;
+    display: flex;
+  }
+
+  &__experience-item-header {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+
+  &__experience-organization {
+    padding-right: 10px;
+    text-align: end;
+    color: #191970;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  &__experience-position {
+    border-left: 1px solid #4f4d4d;
+    padding-left: 10px;
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  &__experience-descrip {
+    text-align: justify;
+    line-height: 22px;
+    margin-top: 20px;
+  }
+
+  &__education {
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    display: flex;
+
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &-term {
+      font-size: 12px;
+      color: #929292;
+    }
+  }
+
+  &__education-item {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    gap: 10px;
+    flex: 1;
+  }
+
+  &__education-degree {
+    color: #191970;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  &__sub-block {
+    justify-content: space-between;
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__works-discription {
+    padding-top: 10px;
+    display: block;
+  }
+}
+
+// Diagramma items
+
+
+
+$percentage: (
+  'zero': 2%,
+  'first': 100%,
+  'second': 99%,
+  'third': 60%,
+  'fourth': 90%,
+  // HTML, CSS, Git, Sass
+  'fifth': 90%,
+  // React, JS, Heroku, Pug
+  'sixth': 90%,
+  // TypeScript
+);
+
+$color: #191970;
+
+.resume__skills-item {
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+  height: 70px;
+  width: 70px;
+
+  &::before {
+    -webkit-mask: radial-gradient(farthest-side,
+        #0000 calc(99% - 8px),
+        #000 calc(100% - 8px));
+    mask: radial-gradient(farthest-side,
+        #0000 calc(99% - 8px),
+        #000 calc(100% - 8px));
+    border-radius: 50%;
+    box-shadow: 4px 3px 6px;
+    display: block;
+    z-index: -1;
+    content: '';
+    height: 100%;
+    inset: 0;
+  }
+}
+
+.resume__skills-title {
+  padding: 10px 0;
+  display: block;
+}
+
+.item_0 {
+  &::before {
+    background: conic-gradient($color map-get($percentage, second),
+        #80808057 0);
+  }
+}
+
+.item_1 {
+  &::before {
+    background: conic-gradient($color map-get($percentage, fourth),
+        #80808057 0);
+  }
+}
+
+.item_2 {
+  &::before {
+    background: conic-gradient($color map-get($percentage, fifth), #80808057 0);
+  }
+}
+
+.item_5 {
+  &::before {
+    background: conic-gradient($color map-get($percentage, third), #80808057 0);
+  }
+}
+
+.item_4 {
+  &::before {
+    background: conic-gradient($color map-get($percentage, first), #80808057 0);
+  }
+}
+
+.item_6 {
+  &::before {
+    background: conic-gradient($color map-get($percentage, sixth), #80808057 0);
+  }
+}
+
+.icon-embed2 {
+  padding-right: 5px;
+  color: #191970;
+}
+
+.hard-skills {
+  margin-bottom: 70px;
+}
+
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('./assets/fonts/icons/fonts/icomoon.eot');
+  src: url('./assets/fonts/icons/fonts/icomoon.eot') format('embedded-opentype'),
+    url('./assets/fonts/icons/fonts/icomoon.ttf') format('truetype'),
+    url('./assets/fonts/icons/fonts/icomoon.woff') format('woff'),
+    url('./assets/fonts/icons/fonts/icomoon.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: 'liga';
+  -moz-font-feature-settings: 'liga=1';
+  -moz-font-feature-settings: 'liga';
+  -ms-font-feature-settings: 'liga' 1;
+  font-feature-settings: 'liga';
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-embed2:before {
+  content: '\ea80';
+}
+
+.icon-facebook2:before {
+  content: '\ea91';
+}
+
+.icon-linkedin:before {
+  content: '\eac9';
+}
