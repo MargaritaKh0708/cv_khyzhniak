@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/cv_khyzhniak/static/css/main.7c821b35.css",
+    "main.js": "/cv_khyzhniak/static/js/main.17a6d554.js",
+    "static/media/photo.jpg": "/cv_khyzhniak/static/media/photo.3a481020deb9d2d9ca91.jpg",
+    "static/media/web2.webp": "/cv_khyzhniak/static/media/web2.dc673c3119100c5e63a1.webp",
+    "static/media/web1.webp": "/cv_khyzhniak/static/media/web1.e088e0682ab60261296d.webp",
+    "static/media/web3.webp": "/cv_khyzhniak/static/media/web3.0732467b6f07acf44422.webp",
+    "static/media/icomoon.svg": "/cv_khyzhniak/static/media/icomoon.76cacbd707d265a5f7bc.svg",
+    "static/media/icomoon.eot": "/cv_khyzhniak/static/media/icomoon.fe59a35df408bb43f0d5.eot",
+    "static/media/icomoon.woff": "/cv_khyzhniak/static/media/icomoon.f33a831a62f09e588341.woff",
+    "static/media/icomoon.ttf": "/cv_khyzhniak/static/media/icomoon.dd08cc9ff176ec0ce9ca.ttf",
+    "index.html": "/cv_khyzhniak/index.html",
+    "main.7c821b35.css.map": "/cv_khyzhniak/static/css/main.7c821b35.css.map",
+    "main.17a6d554.js.map": "/cv_khyzhniak/static/js/main.17a6d554.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7c821b35.css",
+    "static/js/main.17a6d554.js"
+  ]
+}
