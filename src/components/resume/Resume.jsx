@@ -148,7 +148,7 @@ export const Resume = () => {
             <a className='resume__works-item' target="_blank" rel="noreferrer" href='https://github.com/MargaritaKh0708/Kibernetyky/tree/main/src/components'>
               <img src={web1} alt='works' />
             </a>
-            <a className='resume__works-item' target="_blank" rel="noreferrer" href='https://github.com/MargaritaKh0708/chat/tree/main/src/components'>
+            <a className='resume__works-item' target="_blank" rel="noreferrer" href='https://margaritakh0708.github.io/chat/'>
               <img src={web2} alt='works' />
             </a>
           </div>
